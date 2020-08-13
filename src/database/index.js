@@ -3,9 +3,10 @@ import mongoose from 'mongoose'
 class Database{
     constructor(){
         this.mongoDatabase()
-        //You can insert more database types
+        /* You can insert more database types here!*/
     }
 
+    /* Mongo connection function */
     mongoDatabase(){
         mongoose.connect('mongodb://localhost/mongo_database',{
             useNewUrlParser: true,
