@@ -11,14 +11,19 @@
     <dd>npm install -D nodemon</dd>
 
 <dt>4 - Produz código JS válido  - para ES6</dt>
-    <dd>npm install -D sucrase
+    <dd>Adicionado nova versão JS ES6:</dd>
+    <dd>npm install -D sucrase<dd>
+    <dd>packege.json:
+        "scripts": {
+        "dev": "nodemon src/server.js ",
+        "build": "sucrase ./src -d ./outDir --transforms imports"}<dd>
 
 <dt>5 - Instalar o MongoDB</dt>
     <dd>npm install --save mongodb</dt>
 
 <dt>6 - Intalar o Mongoose (traduz os dados do banco de dados para objetos JS, permitindo serem utilizados na aplicação)</dt>
-    <dd>npm install --save mongoose</dt>
+    <dd>npm install --save mongoose</dd>
 
 <dt>7 - Instalar Bycript para encripitar senhas ou outros dados</dt>
-    <dd>npm install --save bcrypt</dt>
+    <dd>npm install --save bcrypt</dd>
 </dl>

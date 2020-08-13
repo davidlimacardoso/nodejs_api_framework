@@ -1,12 +1,13 @@
-const { Router } = require('express')
+import { Router } from 'express'
+
 const routes = new Router()
 
 routes.get('/',(req,res)=>{
     res.send('Start Page')
 })
 
-routes.get('/user',(req,res)=>{
-    res.send('User page')
+routes.get('/user-list',(req,res)=>{
+    res.send(['David','Jack','Lulu'])
 })
 
-module.exports = routes
+export default routes
