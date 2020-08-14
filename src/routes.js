@@ -13,9 +13,14 @@ routes.get('/user-list',(req,res)=>{
 
 routes.get('/user-insert', async (req, res)=>{
     await User.create({
-        name: 'David',
-        email: 'david@dav.com',
+        name: 'Ana',
+        email: 'ana@dav.com',
         password: '123'
+    }, function(err,small){
+        if(err)
+            return res.status(400).json({error:"User can't be created: "+ err})
+
+        return res.status(200).json({error:"User create with success!"})
     })
 })
 
