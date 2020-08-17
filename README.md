@@ -24,6 +24,8 @@
 <dt>6 - Intalar o Mongoose (traduz os dados do banco de dados para objetos JS, permitindo serem utilizados na aplicação)</dt>
     <dd>npm install --save mongoose</dd>
 
-<dt>7 - Instalar Bycript para encripitar senhas ou outros dados</dt>
+<dt>7 - Instalar YUP valdar dados</dt>
+    <dd>npm install --save yup</dd>
+
+<dt>8 - Instalar Bycript para encripitar senhas ou outros dados</dt>
     <dd>npm install --save bcrypt</dd>
-</dl>
