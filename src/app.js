@@ -17,7 +17,6 @@ class App {
     routes(){
         this.app.use(routes)
     }
-
 }
 
 export default new App().app
