@@ -1,29 +1,23 @@
+import * as yup from 'yup';
 import User from '../models/User'
 
 class UserController{
     //Insert User
     async store(req, res){
 
-        if(!req.body.password || typeof req.body.password == undefined || req.body.password == null)
-            return res.status(400).json({
-                error: true,
-                code: 103,
-                message: "Password can't be null."
-            })
+        const schema = yup.object().shape({
+            name: yup.string().required(),
+            email: yup.string().email().required(),
+            name: yup.string().required().min(6)
+        })
 
-        if(!req.body.name || typeof req.body.name == undefined || req.body.name == null)
+        if(!(await schema.isValid(req.body))){
             return res.status(400).json({
                 error: true,
-                code: 103,
-                message: "Name can't be null."
+                code: 102,
+                message: "Invalid date"
             })
-
-        if(!req.body.email || typeof req.body.email == undefined || req.body.email == null)
-            return res.status(400).json({
-                error: true,
-                code: 103,
-                message: "E-mail can't be null."
-            })
+        }
 
         //Check email user is already exists
         const checkEmailExists = await User.findOne({email: req.body.email})
