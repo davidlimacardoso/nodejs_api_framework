@@ -27,5 +27,5 @@
 <dt>7 - Instalar YUP valdar dados</dt>
     <dd>npm install --save yup</dd>
 
-<dt>8 - Instalar Bycript para encripitar senhas ou outros dados</dt>
+<dt>8 - Instalar Bycript para criptografia de senhas</dt>
     <dd>npm install --save bcrypt</dd>
