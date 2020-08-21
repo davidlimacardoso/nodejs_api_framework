@@ -29,3 +29,9 @@
 
 <dt>8 - Instalar Bycript para criptografia de senhas</dt>
     <dd>npm install --save bcrypt</dd>
+
+<dt>9 - Instalar JWT JSON token</dt>
+    <dd>npm install --save jsonwebtoken</dd>
+
+<hr>
+
