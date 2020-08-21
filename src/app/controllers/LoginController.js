@@ -4,11 +4,11 @@ import User from '../models/User'
 class LoginController{
     async store(req, res){
         const {email, password} = req.body
-        
+
         // Check user exists on database
         const userExist = await User.findOne({email:email})
 
-        if(!userExist.email){
+        if(!userExist){
             return res.status(404).json({
                 error: true,
                 code:110,
@@ -26,9 +26,11 @@ class LoginController{
         }
 
         return res.status(302).json({
-            id: userExist._id,
-            email: userExist.email,
-            name: userExist.name
+            user: {
+                id: userExist._id,
+                email: userExist.email,
+                name: userExist.name
+            }
         })
     }
 }
