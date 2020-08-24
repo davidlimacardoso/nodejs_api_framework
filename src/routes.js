@@ -8,14 +8,19 @@ routes.get('/',(req,res)=>{
     res.send('Start Page')
 })
 
-//Login Router
-routes.post('/login', LoginController.store)
 
 //User API Router
 routes.get('/user-list',(req,res)=>{
     res.send(['David','Jack','Lulu'])
 })
 
+//User Login
+routes.post('/login', LoginController.store)
+
+//Insert User
 routes.post('/user-insert',UserController.store)
+
+//Delete User
+routes.delete('/user-del/:id',UserController.delete)
 
 export default routes
