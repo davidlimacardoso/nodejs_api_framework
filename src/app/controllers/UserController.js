@@ -55,7 +55,42 @@ class UserController{
                     message: errorMessages
                 })
             }
-        }s
+        }
+    }
+
+    //Delete User
+    async delete(req, res){
+
+        try{
+            //Check user exist
+            const userExist = await User.findOne({_id: req.params.id})
+            if(!userExist)
+                return res.status(200).json({
+                    error:true,
+                    code:110,
+                    message:"User can't be finded!"
+                })
+
+            //Delete User
+            if(await User.deleteOne({_id:req.params.id})){
+                return res.status(202).json({
+                    error:true,
+                    code:117,
+                    message: "User deleted with success!"
+                })
+            }
+
+        }catch(err){
+            return res.status(404).json({
+                error:true,
+                code:117,
+                message: "Erro to the delete user: "+err
+            })
+        }
+
+        return res.json({
+            error: false,
+            message: "User deleted with success!"})
     }
 }
 
