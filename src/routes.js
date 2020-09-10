@@ -23,4 +23,7 @@ routes.post('/user-insert',UserController.store)
 //Delete User
 routes.delete('/user-del/:id',UserController.delete)
 
+//Update User
+routes.put('/user-edit',UserController.update)
+
 export default routes
