@@ -10,10 +10,8 @@ routes.get('/',(req,res)=>{
 })
 
 
-//User API Router
-routes.get('/user-list',(req,res)=>{
-    res.send(['David','Jack','Lulu'])
-})
+//User List
+routes.get('/user-list',UserController.index)
 
 //User Login
 routes.post('/login', LoginController.store)
