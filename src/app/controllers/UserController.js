@@ -5,6 +5,25 @@ import { response } from 'express';
 import { ObjectID } from 'mongodb';
 
 class UserController{
+
+    //List Users
+    async index(req, res){
+        //Select all users and hide yours passwords
+        await User.find({}).select("-password").then((users)=>{
+            return res.status(200).json({
+                error: false,
+                users: users
+            })
+        }).catch((err)=>{
+            return res.status(400).json({
+                error: true,
+                code: 106,
+                message: "Error to list users: "+err
+            })
+        })
+
+    }
+
     //Insert User
     async store(req, res){
 
