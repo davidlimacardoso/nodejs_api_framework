@@ -8,8 +8,13 @@ class UserController{
 
     //List Users
     async index(req, res){
-        //Select all users and hide yours passwords
-        await User.find({}).select("-password").then((users)=>{
+        /*Take page number and limit, when don't have params query return standart*/
+        const {page = 1} = req.query
+        const {limit = 40} = req.query
+
+        /*Select all users and hide yours passwords*/
+        //await User.find({}).select("-password").then((users)=>{ //Change to paginate
+        await User.paginate({}, {select: '_id name email createdAt updatedAt', page, limit}).then((users)=>{
             return res.status(200).json({
                 error: false,
                 users: users
