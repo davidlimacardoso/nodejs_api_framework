@@ -33,5 +33,8 @@
 <dt>9 - Instalar JWT JSON token</dt>
     <dd>npm install --save jsonwebtoken</dd>
 
+<dt>10 - Instalar Mongoose Paginate v2</dt>
+    <dd>npm install --save mongoose-paginate-v2</dd>
+
 <hr>
 
